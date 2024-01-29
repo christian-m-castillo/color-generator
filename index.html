@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Color Inspiration</title>
+    <meta charset="UTF-8">
+    <style>
+      /*Imlement responsive web desing. Consider mobile first approach using bare html as starting point*/
+      * {
+        /*border: 1px solid black;*/
+      }
+      
+      body {
+        font-family:Arial, Helvetica, sans-serif;
+      }
+
+      header {
+        display: flex;
+        justify-content: center;
+        background-color: bisque;
+      }
+
+      h1 {
+        font-size: 3rem;
+        letter-spacing: .5rem;
+      }
+
+      .space {
+        margin-right: 2rem;
+      }
+
+      .color-gallery {
+        display: flex;
+      }
+
+      .color-square {
+        height: 70vh;
+        width: 33vw;
+        background-color: black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>COLORS!</h1>
+    </header>
+    <div class="color-gallery">
+      <div id="color-square1" class="color-square"></div>
+      <div id="color-square2" class="color-square"></div>
+      <div id="color-square3" class="color-square"></div>
+    </div><!--End Color Gallery-->
+  <script>
+    //Implement color changing functions that also display color names
+    const bodyElement = document.querySelector('body');
+    const colorSquareElement1 = document.querySelector('#color-square1');
+    const colorSquareElement2 = document.querySelector('#color-square2');
+    const colorSquareElement3 = document.querySelector('#color-square3');
+    
+
+    colorSquareElement1.addEventListener('click', generateRGBColorSquare1);
+    colorSquareElement2.addEventListener('click', generateRGBColorSquare2);
+    colorSquareElement3.addEventListener('click', generateRGBColorSquare3);
+
+    function generateRGBColorSquare1() {
+      let redValue = Math.floor(Math.random() * 256);
+      let blueValue = Math.floor(Math.random() * 256);
+      let greenValue = Math.floor(Math.random() * 256);
+      let outputColorString = `rgb(${redValue}, ${blueValue}, ${greenValue})`;
+      colorSquareElement1.style["backgroundColor"] = outputColorString;
+      console.log('Square 1 values: ' + outputColorString);
+    }
+
+    function generateRGBColorSquare2() {
+      let redValue = Math.floor(Math.random() * 256);
+      let blueValue = Math.floor(Math.random() * 256);
+      let greenValue = Math.floor(Math.random() * 256);
+      let outputColorString = `rgb(${redValue}, ${blueValue}, ${greenValue})`;
+      colorSquareElement2.style["backgroundColor"] = outputColorString;
+      console.log('Square 2 values: ' + outputColorString);
+    }
+
+    function generateRGBColorSquare3() {
+      let redValue = Math.floor(Math.random() * 256);
+      let blueValue = Math.floor(Math.random() * 256);
+      let greenValue = Math.floor(Math.random() * 256);
+      let outputColorString = `rgb(${redValue}, ${blueValue}, ${greenValue})`;
+      colorSquareElement3.style["backgroundColor"] = outputColorString;
+      console.log('Square 3 values: ' + outputColorString);
+    }
+
+    generateRGBColorSquare1();
+    generateRGBColorSquare2();
+    generateRGBColorSquare3();
+
+  </script>
+  </body>
+</html>
